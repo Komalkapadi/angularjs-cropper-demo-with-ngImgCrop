@@ -1,0 +1,64 @@
+
+    /* Custom CSS... */
+.resizeContainer{
+    width: 100%;
+    height: 500px;
+}
+.resizeArea{
+    width: 98%;
+    height: 400px;
+    position: relative;
+    resize: both;
+    overflow: hidden;
+    border: 1px solid #333;
+    padding: 2px;
+}
+.cropArea{
+    background: #E4E4E4;
+    width: 50%;
+    height: 90%;
+    max-height: 350px;
+}
+.float{
+    float: left;
+}
+.clear{
+    display:block;
+    clear:both;
+}
+.preview_container{
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+/* CSS FROM ng-img-crop.css.... */
+img-crop {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+img-crop canvas {
+    display: block;
+    left: 50%;
+    outline: medium none;
+    position: absolute;
+    top: 50%;
+}
+div[img-crop-result] {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+}
+div[img-crop-result] .imgCropResultContainer {
+    overflow: hidden;
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+}
+div[img-crop-result] .imgCropResultContainer img {
+    position: absolute;
+}
