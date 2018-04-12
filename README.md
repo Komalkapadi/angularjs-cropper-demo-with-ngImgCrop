@@ -1,0 +1,1 @@
+# angularjs-cropper-demo-with-ngImgCrop
