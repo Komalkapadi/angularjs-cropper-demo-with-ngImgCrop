@@ -1,0 +1,300 @@
+<section class="section">
+    <div class="container">
+        <div class="my-account">
+            <form>
+                <label for="fileInput">
+                    Select Image:
+                </label>
+                <!-- <input id="fileInput" type="file"/> -->
+            </form>
+            <div class="float">
+                <h3>
+                    Crop Data:
+                    [[image]]
+                </h3>
+                <ul>
+                    <li>
+                        <b>
+                            Width
+                        </b>
+                        : [[image.cropInfo.width]]
+                    </li>
+                    <li>
+                        <b>
+                            Height
+                        </b>
+                        : [[image.cropInfo.height]]
+                    </li>
+                    <li>
+                        <b>
+                            X
+                        </b>
+                        : [[image.cropInfo.x]]
+                    </li>
+                    <li>
+                        <b>
+                            Y
+                        </b>
+                        : [[image.cropInfo.y]]
+                    </li>
+                </ul>
+            </div>
+            <div class="float">
+                <h3>
+                    Original Image Data:
+                </h3>
+                <ul>
+                    <li>
+                        <b>
+                            Width
+                        </b>
+                        : [[image.originalInfo.width]]
+                    </li>
+                    <li>
+                        <b>
+                            Height
+                        </b>
+                        : [[image.originalInfo.height]]
+                    </li>
+                </ul>
+            </div>
+            <div class="clear">
+            </div>
+            <div class="resizeContainer">
+                <div class="resizeArea">
+                    <div class="cropArea">
+                        <img-crop area-type="square" crop-data="image.cropInfo" image="imageDataURI" original-data="image.originalInfo" result-image="myCroppedImage">
+                        </img-crop>
+                    </div>
+                    <div class="preview_container">
+                        <div crop-data="image.cropInfo" image="imageDataURI" img-crop-result="" original-data="image.originalInfo" width="70%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="title">
+                GENERAL INFORMATION
+            </div>
+            <form id="edit_admin_profile" name="vm.form" ng-submit="vm.submitProfile()" novalidate="">
+                <div class="back-white details">
+                    <div class="profile-section text-center">
+                        <div class="img">
+                            <img class="img-width-44" ng-src="[[adminData.image]]">
+                            </img>
+                            <img-crop area-type="square" crop-data="image.cropInfo" image="imageDataURI" original-data="image.originalInfo" result-image="myCroppedImage">
+                            </img-crop>
+                        </div>
+                        <div class="update-btn">
+                            <span>
+                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                    <span class="btn btn-sm upload-btn btn-file">
+                                        <span class="fileinput-new">
+                                            <i class="sci-Edit-icon">
+                                            </i>
+                                            Update Photo
+                                        </span>
+                                        <span class="fileinput-exists">
+                                            Change
+                                        </span>
+                                        <input type="hidden">
+                                            <input type="hidden">
+                                                <input name="" type="hidden" value="">
+                                                    <input id="image" name="image" type="file">
+                                                    </input>
+                                                </input>
+                                            </input>
+                                        </input>
+                                    </span>
+                                    <span class="fileinput-filename">
+                                    </span>
+                                    <a class="close fileinput-exists" data-dismiss="fileinput" href="#">
+                                    </a>
+                                </div>
+                            </span>
+                        </div>
+                        <div class="">
+                            <span>
+                                Reporting Officer:
+                            </span>
+                        </div>
+                        <div>
+                            <label>
+                                [[adminData.reporting_officer.first_name]] [[adminData.reporting_officer.last_name]]
+                            </label>
+                        </div>
+                    </div>
+                    <div class="profile-details">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="first_name" name="first_name" ng-model="adminData.first_name" placeholder="First Name" required="" type="text" value="[[adminData.first_name]]">
+                                    </input>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="last_name" name="last_name" ng-model="adminData.last_name" placeholder="Last Name" required="" type="text" value="[[adminData.last_name]]">
+                                    </input>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="email_address" name="email_address" ng-model="adminData.email_address" placeholder="Email Address" required="" type="email" value="[[adminData.email_address]]">
+                                    </input>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <input class="form-control" id="phone" name="phone" ng-model="adminData.phone" placeholder="Phone Number" required="" type="text" value="[[adminData.phone]]">
+                                    </input>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <div class="date form-control" data-provide="datepicker">
+                                        <input class="form-control" id="dob" name="dob" ng-model="adminData.dob" required="" type="text" value="10/24/1984">
+                                            <i class="sci-calendar">
+                                            </i>
+                                        </input>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <button class="btn btn-sm" ng-click="submitProfile()" ng-disabled="!vm.form.$valid" type="submit">
+                                        <i class="sci-Upload">
+                                        </i>
+                                        Update Info
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="my-account section">
+            <div class="title">
+                UPDATE PASSWORD
+            </div>
+            <div class="back-white details">
+                <div class="pwd-details">
+                    <form class="validation-form" name="updatePassword" ng-submit="updatePassword.Updatepassword()" novalidate="">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <input class="form-control" name="old_password" ng-model="passwords.old_password" placeholder="current Password" required="" type="password">
+                                        <div class="help-block" ng-show="updatePassword.old_password.$error.minlength">
+                                            Minimum length 8 characters
+                                        </div>
+                                        <div class="help-block" ng-show="updatePassword.old_password.$error.required">
+                                            Required
+                                        </div>
+                                    </input>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <input class="form-control" minlength="8" name="password" ng-model="passwords.password" placeholder="New Password" required="" type="password">
+                                        <div class="help-block" ng-show="updatePassword.password.$error.minlength">
+                                            Minimum length 8 characters
+                                        </div>
+                                        <div class="help-block" ng-show="updatePassword.password.$error.required">
+                                            Required
+                                        </div>
+                                    </input>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <input class="form-control" minlength="8" name="cnf_password" ng-model="passwords.cnf_password" placeholder="Confirm Password" required="" type="password">
+                                        <div class="help-block" ng-show="updatePassword.cnf_password.$error.minlength">
+                                            Minimum length 8 characters
+                                        </div>
+                                        <div class="help-block" ng-show="updatePassword.cnf_password.$error.required">
+                                            Required
+                                        </div>
+                                    </input>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="">
+                                    <button class="btn btn-sm" ng-click="Updatepassword(passwords)" ng-disabled="!updatePassword.$valid" type="submit">
+                                        <i class="sci-Upload">
+                                        </i>
+                                        Update Password
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<style type="text/css">
+    /* Custom CSS... */
+.resizeContainer{
+    width: 100%;
+    height: 500px;
+}
+.resizeArea{
+    width: 98%;
+    height: 400px;
+    position: relative;
+    resize: both;
+    overflow: hidden;
+    border: 1px solid #333;
+    padding: 2px;
+}
+.cropArea{
+    background: #E4E4E4;
+    width: 50%;
+    height: 90%;
+    max-height: 350px;
+}
+.float{
+    float: left;
+}
+.clear{
+    display:block;
+    clear:both;
+}
+.preview_container{
+    width: 50%;
+    text-align: center;
+    position: absolute;
+    right: 0;
+    top: 2px;
+}
+/* CSS FROM ng-img-crop.css.... */
+img-crop {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+img-crop canvas {
+    display: block;
+    left: 50%;
+    outline: medium none;
+    position: absolute;
+    top: 50%;
+}
+div[img-crop-result] {
+    display: inline-block;
+    position: relative;
+    width: 200px;
+}
+div[img-crop-result] .imgCropResultContainer {
+    overflow: hidden;
+    padding-top: 0;
+    position: relative;
+    width: 100%;
+}
+div[img-crop-result] .imgCropResultContainer img {
+    position: absolute;
+}
+</style>
